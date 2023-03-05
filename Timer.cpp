@@ -2,8 +2,9 @@
 #include <iostream>
 #include "Timer.h"
 
-Timer::Timer()
+Timer::Timer(std::string name)
 {
+    point_name = name;
     st_point = std::chrono::high_resolution_clock::now();
 }
 
@@ -22,6 +23,6 @@ void Timer::Stop()
     auto duration = end - start;
     double ms = duration * 0.001;
 
-    std::cout << ms << " ms"
+    std::cout << point_name << " " << ms << " ms"
               << "\n";
 }
