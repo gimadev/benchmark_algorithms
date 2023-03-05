@@ -1,6 +1,18 @@
 #include <iostream>
 #include "Timer.h"
 
+int *create_array(int size)
+{
+    int *a = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        a[i] = rand() % 10000;
+    }
+
+    return a;
+}
+
 void print_arr(int *arr, int size)
 {
     for (int i = 0; i < size; i++)
