@@ -13,6 +13,18 @@ int *create_array(int size)
     return a;
 }
 
+int *copy_array(int *a, int size)
+{
+    int *b = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        b[i] = a[i];
+    }
+
+    return b;
+}
+
 void print_arr(int *arr, int size)
 {
     for (int i = 0; i < size; i++)

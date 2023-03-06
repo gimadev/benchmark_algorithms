@@ -8,9 +8,10 @@ int main()
 
     int *a = create_array(arraySize);
 
-    int *b = bubble_sort(a, arraySize);
+    int *b = copy_array(a, arraySize);
 
-    print_arr(b, arraySize);
+    int *sorted = bubble_sort(b, arraySize);
 
+    print_arr(sorted, arraySize);
     
 }
