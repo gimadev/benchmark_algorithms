@@ -24,6 +24,4 @@ int main()
         Timer t("fast sort");
         int *sorted = fast_sort(c, arraySize);
     }
-
-    std::cout << std::endl;
 }
