@@ -1,5 +1,6 @@
 #include <chrono>
 #include <iostream>
+#include <iomanip>
 #include "Timer.h"
 
 Timer::Timer(std::string name)
@@ -23,6 +24,7 @@ void Timer::Stop()
     auto duration = end - start;
     double ms = duration * 0.001;
 
-    std::cout << point_name << " " << ms << " ms"
-              << "\n";
+    int size = 30 - point_name.size();
+
+    std::cout << point_name << std::setw(size) << ms << " ms" << std::endl;
 }
