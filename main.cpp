@@ -11,19 +11,28 @@ int main()
 
     int *a = create_array(arraySize);
 
-    int *b = copy_array(a, arraySize);
+    int *a1 = copy_array(a, arraySize);
 
     std::cout << std::endl;
 
     {
         Timer t("stupid sort");
-        int *sorted = stupid_sort(b, arraySize);
+        int *sorted = stupid_sort(a1, arraySize);
     }
 
-    int *c = copy_array(a, arraySize);
+    int *a2 = copy_array(a, arraySize);
 
     {
         Timer t("fast sort");
-        int *sorted = fast_sort(c, arraySize);
+        int *sorted = fast_sort(a2, arraySize);
     }
+
+    int *a3 = copy_array(a, arraySize);
+
+    {
+        Timer t("bubble sort");
+        int *sorted = bubble_sort(a3, arraySize);
+    }
+
+    std::cout << std::endl;
 }

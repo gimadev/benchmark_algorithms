@@ -55,6 +55,32 @@ int *stupid_sort(int *a, int size)
     return a;
 }
 
+int *bubble_sort(int *a, int size)
+{
+    int i = 0;
+    int last = size - 1;
+
+    while (i < last)
+    {
+        if (a[i] > a[i + 1])
+        {
+            int temp = a[i];
+            a[i] = a[i + 1];
+            a[i + 1] = temp;
+        }
+
+        i++;
+
+        if (i == last)
+        {
+            last--;
+            i = 0;
+        }
+    }
+
+    return a;
+}
+
 int *fast_sort(int *a, int size)
 {
     if (size < 2)
@@ -125,12 +151,12 @@ int *fast_sort(int *a, int size)
 
         for (int i = 0; i < more; i++)
         {
-            sorted[i+1] = sorted_more[i];
+            sorted[i + 1] = sorted_more[i];
         }
 
         return sorted;
     }
-    else if(more == 0)
+    else if (more == 0)
     {
         int *sorted_less = fast_sort(less_arr, less);
         int *sorted = new int[less + 1];
@@ -144,7 +170,8 @@ int *fast_sort(int *a, int size)
 
         return sorted;
     }
-    else {
+    else
+    {
         int *sorted_less = fast_sort(less_arr, less);
         int *sorted_more = fast_sort(more_arr, more);
         int *sorted = new int[less + more + 1];
@@ -158,7 +185,7 @@ int *fast_sort(int *a, int size)
 
         for (int i = 0; i < more; i++)
         {
-            sorted[less+1+i] = sorted_more[i];
+            sorted[less + 1 + i] = sorted_more[i];
         }
 
         return sorted;
