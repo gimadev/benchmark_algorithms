@@ -34,7 +34,7 @@ void print_arr(int *arr, int size)
     }
 }
 
-int *bubble_sort(int *a, int size)
+int *stupid_sort(int *a, int size)
 {
     int i = 0;
 

@@ -6,6 +6,8 @@ int main()
 {
 
     const int arraySize = 1000;
+    
+    std::cout << std::endl << "number of elements " << arraySize << std::endl;
 
     int *a = create_array(arraySize);
 
@@ -14,8 +16,8 @@ int main()
     std::cout << std::endl;
 
     {
-        Timer t("bubble sort");
-        int *sorted = bubble_sort(b, arraySize);
+        Timer t("stupid sort");
+        int *sorted = stupid_sort(b, arraySize);
     }
 
     int *c = copy_array(a, arraySize);
